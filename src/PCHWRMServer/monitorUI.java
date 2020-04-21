@@ -26,7 +26,7 @@ public class monitorUI extends StackPane {
     Gauge memoryGauge;
     Gauge videoMemoryGauge;
     Gauge CPUFanSpeedGauge;
-    Gauge GPUFanSpeedGauge;
+    Gauge CASEFanSpeedGauge;
 
     VBox notConnectedPane;
     VBox gaugesPane;
@@ -205,7 +205,7 @@ public class monitorUI extends StackPane {
         fanSpeedVBox.setAlignment(Pos.CENTER);
         fanSpeedVBox.setSpacing(10);
 
-        Label fanSpeedLabel = new Label("FAN SPEED");
+        Label fanSpeedLabel = new Label("FAN/PUMP SPEED");
         fanSpeedLabel.getStyleClass().add("h2");
 
         HBox fanSpeedGaugeBox = new HBox();
@@ -214,7 +214,7 @@ public class monitorUI extends StackPane {
         CPUFanSpeedGauge = new Gauge();
         CPUFanSpeedGauge.setSkinType(Gauge.SkinType.FLAT);
         CPUFanSpeedGauge.setTitleColor(Color.WHITE);
-        CPUFanSpeedGauge.setTitle("CPU");
+        CPUFanSpeedGauge.setTitle("PUMP");
         CPUFanSpeedGauge.setValue(50);
         CPUFanSpeedGauge.setMaxValue(1);
         CPUFanSpeedGauge.setValueColor(Color.WHITE);
@@ -226,18 +226,18 @@ public class monitorUI extends StackPane {
         Region r3 = new Region();
         HBox.setHgrow(r3, Priority.ALWAYS);
 
-        GPUFanSpeedGauge = new Gauge();
-        GPUFanSpeedGauge.setSkinType(Gauge.SkinType.FLAT);
-        GPUFanSpeedGauge.setTitleColor(Color.WHITE);
-        GPUFanSpeedGauge.setTitle("GPU");
-        GPUFanSpeedGauge.setValue(500);
-        GPUFanSpeedGauge.setValueColor(Color.WHITE);
-        GPUFanSpeedGauge.setUnitColor(Color.WHITE);
-        GPUFanSpeedGauge.setUnit("RPM");
-        GPUFanSpeedGauge.setCache(true);
-        GPUFanSpeedGauge.setCacheHint(CacheHint.SPEED);
+        CASEFanSpeedGauge = new Gauge();
+        CASEFanSpeedGauge.setSkinType(Gauge.SkinType.FLAT);
+        CASEFanSpeedGauge.setTitleColor(Color.WHITE);
+        CASEFanSpeedGauge.setTitle("CASE");
+        CASEFanSpeedGauge.setValue(500);
+        CASEFanSpeedGauge.setValueColor(Color.WHITE);
+        CASEFanSpeedGauge.setUnitColor(Color.WHITE);
+        CASEFanSpeedGauge.setUnit("RPM");
+        CASEFanSpeedGauge.setCache(true);
+        CASEFanSpeedGauge.setCacheHint(CacheHint.SPEED);
 
-        fanSpeedGaugeBox.getChildren().addAll(CPUFanSpeedGauge, r3, GPUFanSpeedGauge);
+        fanSpeedGaugeBox.getChildren().addAll(CPUFanSpeedGauge, r3, CASEFanSpeedGauge);
 
         fanSpeedVBox.getChildren().addAll(fanSpeedLabel, fanSpeedGaugeBox);
 
@@ -280,7 +280,7 @@ public class monitorUI extends StackPane {
         CPULoadGauge.setValue(0);
         GPULoadGauge.setValue(0);
         CPUFanSpeedGauge.setValue(0);
-        GPUFanSpeedGauge.setValue(0);
+        CASEFanSpeedGauge.setValue(0);
         CPUTempGauge.setValue(0);
         GPUTempGauge.setValue(0);
         memoryGauge.setValue(0);
