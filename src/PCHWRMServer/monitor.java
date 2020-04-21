@@ -171,12 +171,12 @@ public class monitor extends monitorUI {
                         cpuFANSpeedMaxValue = cpuFANSpeed;
                     }
                 }
-                case "GPU_FAN" -> {
-                    int gpuFANSpeed = (int) Double.parseDouble(rawData[1]);
-                    Platform.runLater(() -> GPUFanSpeedGauge.setValue(gpuFANSpeed));
-                    if (gpuFANSpeed > gpuFANSpeedMaxValue) {
-                        Platform.runLater(() -> GPUFanSpeedGauge.setMaxValue(gpuFANSpeed));
-                        gpuFANSpeedMaxValue = gpuFANSpeed;
+                case "CASE_FAN" -> {
+                    int caseFANSpeed = (int) Double.parseDouble(rawData[1]);
+                    Platform.runLater(() -> CASEFanSpeedGauge.setValue(caseFANSpeed));
+                    if (caseFANSpeed > gpuFANSpeedMaxValue) {
+                        Platform.runLater(() -> CASEFanSpeedGauge.setMaxValue(caseFANSpeed));
+                        gpuFANSpeedMaxValue = caseFANSpeed;
                     }
                 }
             }
